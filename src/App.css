@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
 :root {
 	--mainBG: #2b2d42;
 	--secondaryBG: #8d99ae;
 	--fontColour: #edf2f4;
+	--secondaryFontColour: #000;
 	--mainRed: #d90429;
 	--secondaryRed: #ef233c;
 	--Appborder: 1px solid var(--fontColour);
+	--fontLight: 300;
+	--fontRegular: 400;
+	--fontSemiBold: 600;
+	--fontBold: 700;
 }
 
 * {
@@ -14,10 +21,11 @@
 }
 
 .App {
-	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: var(--fontRegular);
 	position: relative;
 	display: grid;
-	height: 100vh;
+	height: 99.9vh;
 	grid-template-rows: 1fr 10fr 1fr;
 	grid-template-areas:
 		'header'
@@ -27,34 +35,9 @@
 	color: var(--fontColour);
 }
 
-#Nav {
-	background-color: var(--mainRed);
-}
-
-#navList {
-	list-style: none;
-	display: flex;
-	flex-direction: row;
-}
-
-.navLink {
-	text-decoration: none;
-	color: var(--fontColour);
-	margin: 0 1rem;
-}
-
-#Header {
-	background-color: var(--mainRed);
-	grid-area: header;
-	border: var(--Appborder);
-}
-#menuIcon{
-  position:absolute;
-  top: 5%;
-  right: 5%;
-}
 #ArticleList {
 	grid-area: main;
+	overflow: scroll;
 }
 
 #Footer {
@@ -67,26 +50,90 @@
 	margin: 1rem auto;
 }
 
-.Menu {
-	z-index: 10;
-  background: url('./menu.svg');
-	top: 8%;
-	right: 5%;
-	position: absolute;
-	height: 254px;
-  width: 203px;
-	
-}
-#menuList{
-  font-size: 1.5rem;
-  text-align:left;
-  list-style: none;
-  margin: 3rem auto;
-
+.ArticleCard {
+	height: 250px;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: var(--secondaryBG);
+	border: var(--Appborder);
+	color: var(--secondaryFontColour);
+	margin: 1rem auto;
 }
 
-#closeMenu{
-  position: absolute;
-  top: 15px;
-  right: 20px;  
+.articleTitle {
+	margin: 1rem 0 0 1rem;
+	width: 90%;
+}
+.textOverflowOff {
+	word-break: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	line-height: 16px;
+	max-height: 4rem;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+
+.articleAuthor {
+	font-weight: var(--fontLight);
+	margin: 1rem 0 0 1rem;
+}
+
+.articleBody {
+	font-size: 0.9rem;
+	font-weight: var(--fontRegular);
+	height: 100px;
+	width: 90%;
+	margin: 1rem 0 0 1rem;
+}
+.votes {
+	display: flex;
+	width: 90%;
+	justify-content: space-between;
+	margin: 1rem 0 1rem 1rem;
+}
+.articleButton {
+	padding: 2%;
+	background-color: var(--mainRed);
+	border: var(--Appborder);
+}
+
+@media only screen and (min-width: 1120px) {
+
+  .App{
+    margin: 0 auto;
+    width: 90vw;
+  }
+	#Nav {
+		display: block;
+	}
+	#menuIcon {
+		display: none;
+	}
+	.Menu {
+		display: none;
+	}
+	#ArticleList {
+    overflow-x: hidden;
+		grid-area: main;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	}
+	.ArticleCard {
+		height: 250px;
+		width: 450px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: flex-start;
+		background-color: var(--secondaryBG);
+		border: var(--Appborder);
+		color: var(--secondaryFontColour);
+		margin: 1rem auto;
+	}
 }

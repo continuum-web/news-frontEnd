@@ -1,0 +1,52 @@
+
+#Header {
+	font-weight: var(--fontBold);
+	background-color: var(--mainRed);
+	grid-area: header;
+	border: var(--Appborder);
+}
+#menuIcon {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+}
+
+#Nav {
+	display: none;
+	background-color: var(--mainRed);
+}
+
+#navList {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+}
+
+.navLink {
+	text-decoration: none;
+	color: var(--fontColour);
+	font-weight: var(--fontLight);
+	margin: 0 0.5rem;
+}
+
+.Menu {
+	z-index: 10;
+	background: url('../assets/menu.svg');
+	top: 8%;
+	right: 5%;
+	position: absolute;
+	height: 254px;
+	width: 203px;
+}
+#menuList {
+	font-size: 1.5rem;
+	text-align: left;
+	list-style: none;
+	margin: 3rem auto;
+}
+
+#closeMenu {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+}

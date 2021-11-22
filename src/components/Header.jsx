@@ -3,6 +3,7 @@ import Nav from './Nav';
 import { useState, useEffect } from 'react';
 import Menu from './Menu';
 import { getTopics } from '../utils/ApiCalls';
+import '../styles/header.css';
 
 export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
@@ -10,7 +11,6 @@ export default function Header() {
 
     useEffect(() => {
 			getTopics().then(({ topics }) => {
-				console.log(topics);
 				setTopicsList(topics);
 			});
 			return () => {};
