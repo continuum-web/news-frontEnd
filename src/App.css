@@ -4,6 +4,7 @@
 	--fontColour: #edf2f4;
 	--mainRed: #d90429;
 	--secondaryRed: #ef233c;
+	--Appborder: 1px solid var(--fontColour);
 }
 
 * {
@@ -14,6 +15,7 @@
 
 .App {
 	text-align: center;
+	position: relative;
 	display: grid;
 	height: 100vh;
 	grid-template-rows: 1fr 10fr 1fr;
@@ -29,15 +31,56 @@
 	background-color: var(--mainRed);
 }
 
+#navList {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+}
+
+.navLink {
+	text-decoration: none;
+	color: var(--fontColour);
+	margin: 0 1rem;
+}
+
 #Header {
 	background-color: var(--mainRed);
 	grid-area: header;
+	border: var(--Appborder);
 }
+#menuIcon{
+  position:absolute;
+  top: 5%;
+  right: 5%;
+}
+#ArticleList {
+	grid-area: main;
+}
+
 #Footer {
 	background-color: var(--mainRed);
 	grid-area: footer;
+	border: var(--Appborder);
 }
 
 #FooterH3 {
 	margin: 1rem auto;
+}
+
+.Menu {
+	z-index: 10;
+  background: url('./menu.svg');
+	top: 8%;
+	right: 5%;
+	position: absolute;
+	height: 254px;
+  width: 203px;
+	
+}
+#menuList{
+  font-size: 1.5rem;
+  text-align:left;
+  list-style: none;
+  margin: 3rem auto;
+
 }
