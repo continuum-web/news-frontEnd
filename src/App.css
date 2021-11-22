@@ -84,3 +84,9 @@
   margin: 3rem auto;
 
 }
+
+#closeMenu{
+  position: absolute;
+  top: 15px;
+  right: 20px;  
+}

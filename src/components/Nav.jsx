@@ -1,35 +1,20 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { getTopics } from '../utils/ApiCalls';
 import { Link } from 'react-router-dom';
-import Menu from './Menu';
 
-export default function Nav() {
-	const [topicList, setTopicsList] = useState([]);
-
-	useEffect(() => {
-		getTopics().then(({ topics }) => {
-			console.log(topics);
-			setTopicsList(topics);
-		});
-		return () => {};
-	}, []);
+export default function Nav({ topics }) {
 	return (
-        <nav>
-            <h4 id="menuIcon">Menu</h4>
-            <Menu topicList={topicList }/>
+		<nav id='Nav'>
+			<ul id='navList'>
+				{topics.map(({ slug }) => {
+					return (
+						<li key={slug} className='navLi'>
+							<Link className='navLink' to=''>
+								{slug}
+							</Link>
+						</li>
+					);
+				})}
+			</ul>
 		</nav>
 	);
-	// return (
-	// 	<nav id='Nav'>
-	// 		<ul id="navList">
-	//             {topicList.map(({slug}) => {
-	//                 return (
-	//                     <li key={slug} className="navLi">
-	//                         <Link className="navLink" to="">{slug}</Link></li>
-	//                 )
-	// 			})}
-	// 		</ul>
-	// 	</nav>
-	// );
 }
