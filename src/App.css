@@ -47,7 +47,8 @@
 }
 
 #FooterH3 {
-	margin: 1rem auto;
+  text-align: center;
+  margin: 1rem auto;
 }
 
 .ArticleCard {
@@ -108,15 +109,7 @@
     margin: 0 auto;
     width: 90vw;
   }
-	#Nav {
-		display: block;
-	}
-	#menuIcon {
-		display: none;
-	}
-	.Menu {
-		display: none;
-	}
+
 	#ArticleList {
     overflow-x: hidden;
 		grid-area: main;
@@ -136,4 +129,24 @@
 		color: var(--secondaryFontColour);
 		margin: 1rem auto;
 	}
+  
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--mainBG);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:var(--mainRed);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:var(--fontColour);
+}
 }
