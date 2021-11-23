@@ -1,0 +1,46 @@
+.singlearticle {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	background-color: var(--secondaryBG);
+	color: var(--secondaryFontColour);
+	margin: 1rem auto;
+	min-height: fit-content;
+	max-height: 40vh;
+	width: 90%;
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(237, 242, 244, 0.25);
+	box-shadow: 3px 3px 5px 0px rgba(237, 242, 244, 0.25);
+}
+
+.singlearticleHeading {
+	margin: 1rem 1rem 0.5rem 1rem;
+	font-weight: var(--fontSemiBold);
+}
+
+.singlearticleAuthor {
+	margin: 0rem 1rem 1rem 1rem;
+	font-weight: var(--fontLight);
+}
+
+.singlearticleBody {
+	margin: 0rem 1rem 1rem 1rem;
+}
+.sAVotesContainerer {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+.singlearticleVotes {
+	font-weight: var(--fontSemiBold);
+}
+
+.singlearticleButton {
+	width: 75px;
+	height: 25px;
+	color: var(--fontColour);
+	background-color: var(--mainRed);
+	border: var(--Appborder);
+}

@@ -16,3 +16,16 @@ export const getArticles = () => {
         return res.data
      })
 }
+
+export const getSingleArticle = (id) => {
+    return newsAPI.get(`/articles/${id}`).then(({data : {articles}}) => {
+        return articles[0]
+     })
+}
+
+export const getArticleComments = (id) => {
+    return newsAPI.get(`articles/${id}/comments"`).then(
+        (data) => {console.log(data) }
+    );
+
+}
