@@ -17,12 +17,14 @@ export default function Header() {
 		}, []);
 
 	if (showMenu === true) {
+		
 		return (
 			<header id='Header'>
 				<h1 id='HeaderH1'>Northcoders News</h1>
                 <Menu topics={topicList} setShowMenu={setShowMenu}/>
 			</header>
 		);
+		
 	} else {
 		return (
 			<header id='Header'>

@@ -16,7 +16,7 @@ export default function Menu({ topics, setShowMenu }) {
 				{topics.map(({ slug }) => {
 					return (
 						<li key={slug} className='navLi'>
-							<Link className='navLink' to=''>
+							<Link className='navLink' to={`/topic/${slug}`}>
 								{slug}
 							</Link>
 						</li>
