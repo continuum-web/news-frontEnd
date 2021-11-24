@@ -21,11 +21,11 @@
 }
 
 .App {
+	height: 100vh;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: var(--fontRegular);
 	position: relative;
 	display: grid;
-	height: 99.9vh;
 	grid-template-rows: 1fr 10fr 1fr;
 	grid-template-areas:
 		'header'
@@ -41,6 +41,8 @@
 }
 
 #Footer {
+	/* display: none; */
+	max-height:100px;
 	background-color: var(--mainRed);
 	grid-area: footer;
 	border: var(--Appborder);

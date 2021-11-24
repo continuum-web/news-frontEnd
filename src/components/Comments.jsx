@@ -1,24 +1,23 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import {getArticleComments} from '../utils/ApiCalls'
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { getArticleComments } from '../utils/ApiCalls';
+import CommentCard from './CommentCard';
 
-export default function Comments({ id}) {
-    const [comments, setComments] = useState()
+export default function Comments({ id }) {
+	const [articleComments, setArticleComments] = useState([]);
 
-     useEffect(() => {
-         getArticleComments(id).then((comments) => {
-             setComments(comments)
-             console.log(comments)
-          })
-         return () => {
-            
-         }
-     }, [])
+	useEffect(() => {
+		getArticleComments(id).then(comments => {
+			setArticleComments(comments);
+		});
+		return () => {};
+	}, []);
 
-
-    return (
-        <div>
-            <h3>Comments</h3>
-        </div>
-    )
+	return (
+		<div className="CommentsContainer">
+			{articleComments.map(comment => {
+				return <CommentCard comment={comment} />;
+			})}
+		</div>
+	);
 }

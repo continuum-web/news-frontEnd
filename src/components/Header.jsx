@@ -18,6 +18,7 @@ export default function Header() {
 
 	if (showMenu === true) {
 		
+		setTimeout(() => {setShowMenu(false) }, 5000)
 		return (
 			<header id='Header'>
 				<h1 id='HeaderH1'>Northcoders News</h1>

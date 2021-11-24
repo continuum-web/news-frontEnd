@@ -22,19 +22,15 @@ export const getSingleArticle = id => {
 	});
 };
 export const getArticlesByTopic = topic => {
-   
-	return newsAPI
-        .get(`/articles?topic=${topic}`)
-        .then(res => {
-            console.log(res.data)
-			return res.data;
-        });
-    
+	return newsAPI.get(`/articles?topic=${topic}`).then(res => {
+		console.log(res.data);
+		return res.data;
+	});
 };
 
-export const getArticleComments = (id) => {
-    return newsAPI.get(`articles/${id}/comments"`).then(
-        (data) => {console.log(data) }
-    );
-
-}
+export const getArticleComments = id => {
+	return newsAPI.get(`/articles/${id}/comments`).then(res => {
+		// console.log(res.data.comments)
+		return res.data.comments
+	});
+};
