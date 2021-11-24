@@ -21,7 +21,7 @@ export default function AddComment(id) {
 	return (
 		<form id="AddCommentForm" onSubmit={handleSubmit}>
 			<label for='comment'>comment:</label>
-            <input
+            <input required
                 id="commentInput"
                 name='comment'
                 type='text'
