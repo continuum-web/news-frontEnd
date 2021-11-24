@@ -111,7 +111,24 @@
 	background-color: var(--mainRed);
 	border: var(--Appborder);
 }
-
+.ArticleSort{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding: 2%;
+	color: var(--fontColour);
+	background-color: var(--mainRed);
+	border: var(--Appborder);
+}
+.ArticleSort > button{
+	text-decoration: none;
+	margin: 0.2rem auto;
+	padding: 2%;
+	color: var(--fontColour);
+	background-color: var(--mainRed);
+	border: var(--Appborder);
+}
 @media only screen and (min-width: 1120px) {
 	.App {
 		margin: 0 auto;

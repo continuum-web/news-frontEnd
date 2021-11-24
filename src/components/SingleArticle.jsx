@@ -47,7 +47,7 @@ export default function SingleArticle() {
 					</button>
 				</div>
 			</div>
-			<Comments id={id} />
+			<Comments key={ article_id + Math.random()} id={id} />
 		</div>
 	);
 }
