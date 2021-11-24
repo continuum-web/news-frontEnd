@@ -1,0 +1,16 @@
+.errorContainer{
+    margin : 5rem auto;
+    width: 90%;
+    text-align: center;
+}
+
+.errorStatus{
+    font-size: 10rem;
+}
+
+.errorMsg{
+    font-size: 2rem;
+}
+.gif{
+    margin: 2rem ;
+}

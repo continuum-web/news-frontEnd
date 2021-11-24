@@ -23,13 +23,14 @@ export default function ArticleList() {
 	}, [sortBy]);
 
 	return (
-		<main id='ArticleContainer'>
+		<div className='container'>
 			<div className='ArticleSort'>
 				<p>sort by:..</p>
-				<br/>
-				{sorters.map((sorter) => {
+				<br />
+				{sorters.map(sorter => {
 					return (
-						<button key={sorter}
+						<button
+							key={sorter}
 							onClick={() => {
 								setSortBy(sorter);
 							}}>
@@ -38,9 +39,11 @@ export default function ArticleList() {
 					);
 				})}
 			</div>
-			{articles.map(article => {
-				return <ArticleCard key={article.article_id} article={article} />;
-			})}
-		</main>
+			<div id='ArticleList'>
+				{articles.map(article => {
+					return <ArticleCard key={article.article_id} article={article} />;
+				})}
+			</div>
+		</div>
 	);
 }
