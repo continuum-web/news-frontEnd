@@ -34,3 +34,12 @@ export const getArticleComments = id => {
 		return res.data.comments
 	});
 };
+
+
+export const upVoteArticle = (id) => {
+	return newsAPI.patch(`/articles/${id}`, {
+		inc_votes: 1,
+	}).then((res) => {
+		return res
+	});
+}
