@@ -48,3 +48,11 @@ export const upVoteArticle = (id) => {
 		return res
 	});
 }
+
+export const addComment = (id, commentObj) => {
+	return newsAPI.post(`/articles/${id}/comments`, commentObj).then(
+		(res) => {
+			console.log(res)
+		}
+	)
+}

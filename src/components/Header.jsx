@@ -4,10 +4,14 @@ import { useState, useEffect } from 'react';
 import Menu from './Menu';
 import { getTopics } from '../utils/ApiCalls';
 import '../styles/header.css';
+import { useContext} from 'react'
+import { userContext } from '../Contexts/UserContext';
 
 export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
-    const [topicList, setTopicsList] = useState([]);
+	const [topicList, setTopicsList] = useState([]);
+	const {user, setUser} = useContext(userContext)
+	console.log(user)
 
     useEffect(() => {
 			getTopics().then(({ topics }) => {

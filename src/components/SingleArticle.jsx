@@ -5,21 +5,20 @@ import { getSingleArticle } from '../utils/ApiCalls';
 import '../styles/singleArticle.css';
 import Comments from './Comments';
 import { upVoteArticle } from '../utils/ApiCalls';
-import PageNotFound  from '../components/PageNotFound'
+import PageNotFound from '../components/PageNotFound'
+import AddComment from './AddComment'
 
 export default function SingleArticle() {
 	const [singleArticle, setSingleArticle] = useState({});
 	const { title, body, votes, author, article_id } = singleArticle;
 	const [error, setError] = useState(null);
-	const [votesState, setVotesState] = useState(15);
+	const [votesState, setVotesState] = useState();
 
 	const { id } = useParams();
 
 	const upVote = article_id => {
 		setVotesState(prevVoteState => {
 			return prevVoteState + 1;
-		}).catch(error => {
-			console.log(error);
 		});
 		upVoteArticle(article_id);
 	};
@@ -30,11 +29,12 @@ export default function SingleArticle() {
 			.then(article => {
 				setSingleArticle(article);
 			})
-			.catch(error => {
+			.catch(err => {
+				console.log(`this is the  ${err}`)
 				setError({ status: 404, msg: 'Oh no did you take a wrong turn' });
 			});
 		return;
-	}, [votes]);
+	}, [votes, id]);
 
 
 	if (error !== null) {
@@ -56,6 +56,7 @@ export default function SingleArticle() {
 							Add Vote
 						</button>
 					</div>
+					<AddComment id={id}/>
 				</div>
 				<Comments key={article_id + Math.random()} id={id} />
 			</div>
