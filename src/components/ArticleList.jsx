@@ -41,7 +41,7 @@ export default function ArticleList() {
 					);
 				})}
 			</div>
-			<div id='ArticleList'>
+			<div className='ArticleList'>
 				{articles.map(article => {
 					return <ArticleCard key={article.article_id} article={article} />;
 				})}

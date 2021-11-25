@@ -8,11 +8,12 @@ import TopicList from './components/TopicList';
 import PageNotFound from './components/PageNotFound';
 import { userContext } from './Contexts/UserContext';
 import { useState } from 'react';
+import UserList from './components/UserList';
 
 function App() {
 	const [user, setUser] = useState('grumpy19');
 	return (
-		<userContext.Provider value={{user, setUser}}>
+		<userContext.Provider value={{ user, setUser }}>
 			<div className='App'>
 				<Header />
 				<Routes>
@@ -21,6 +22,7 @@ function App() {
 					<Route exact path='/articles' element={<ArticleList />} />
 					<Route path='/articles/:id' element={<SingleArticle />} />
 					<Route path='/topic/:topic' element={<TopicList />} />
+					<Route path='/users' element={<UserList />} />
 				</Routes>
 				<Footer />
 			</div>

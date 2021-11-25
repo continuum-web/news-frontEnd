@@ -52,7 +52,14 @@ export const upVoteArticle = (id) => {
 export const addComment = (id, commentObj) => {
 	return newsAPI.post(`/articles/${id}/comments`, commentObj).then(
 		(res) => {
-			console.log(res)
+			
 		}
 	)
+}
+
+export const getUserList = () => {
+	return newsAPI.get('/users').then((res) => {
+		console.log(res.data.users)
+		return res.data.users
+	 })
 }

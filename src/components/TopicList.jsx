@@ -34,7 +34,7 @@ export default function TopicList() {
 		)
 	} else {
 		return (
-		<main id='TopicList'>
+		<main id='TopicList' className="container">
 		
 			{articles.map((article) => {
 				

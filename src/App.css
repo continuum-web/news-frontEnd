@@ -34,10 +34,12 @@
 	background-color: var(--mainBG);
 	color: var(--fontColour);
 }
-
-#ArticleList {
-	grid-area: main;
+.container{
 	overflow: scroll;
+}
+.ArticleList {
+	grid-area: main;
+	overflow: hidden;
 }
 
 #Footer {
