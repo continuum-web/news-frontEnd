@@ -19,7 +19,7 @@ The objective for this project is to give the backend API I created previously a
 
  I accomplished this by following Agile Methodology user stories to guide my development.
 
- I set out to Acheive the following:
+ I set out to Achieve the following:
 
         As a user I should be able to....
 
