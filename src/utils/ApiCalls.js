@@ -50,11 +50,8 @@ export const upVoteArticle = (id) => {
 }
 
 export const addComment = (id, commentObj) => {
-	return newsAPI.post(`/articles/${id}/comments`, commentObj).then(
-		(res) => {
-			
-		}
-	)
+	return newsAPI.post(`/articles/${id}/comments`, commentObj)
+	
 }
 
 export const getUserList = () => {
@@ -62,4 +59,8 @@ export const getUserList = () => {
 
 		return res.data.users
 	 })
+}
+
+export const deleteComment = id => {
+	return newsAPI.delete(`/comments/${id}`)
 }

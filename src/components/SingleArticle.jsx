@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { getSingleArticle } from '../utils/ApiCalls';
 import '../styles/singleArticle.css';
 import Comments from './Comments';
-import { upVoteArticle } from '../utils/ApiCalls';
 import PageNotFound from '../components/PageNotFound'
 import AddComment from './AddComment'
 import ChangeArticleVotes from './ChangeArticleVotes';
@@ -44,7 +43,7 @@ export default function SingleArticle() {
 					</div>
 					<AddComment id={id}/>
 				</div>
-				<Comments key={article_id + Math.random()} id={id} />
+				<Comments key={article_id + Math.random()} id={id} author={author} />
 			</div>
 		);
 	}

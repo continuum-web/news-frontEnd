@@ -4,6 +4,7 @@ import { getArticleComments } from '../utils/ApiCalls';
 import CommentCard from './CommentCard';
 
 export default function Comments({ id }) {
+	//console.log(author)
 	const [articleComments, setArticleComments] = useState([]);
 	useEffect(() => {
 		getArticleComments(id).then(comments => {
@@ -17,7 +18,7 @@ export default function Comments({ id }) {
 	return (
 		<div className='CommentsContainer'>
 			{articleComments.map(comment => {
-				return <CommentCard key={comment.comment_id} comment={comment} />;
+				return <CommentCard key={comment.comment_id} comment={comment}  />;
 			})}
 		</div>
 	);
