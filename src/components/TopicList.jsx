@@ -15,7 +15,7 @@ export default function TopicList() {
 	useEffect(() => {
 	
 		getArticlesByTopic(topic).then(({ articles }) => {
-		console.log(articles)
+	
 			setArticles(articles)
 		}).catch(error => {
 			

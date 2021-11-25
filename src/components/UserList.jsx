@@ -8,7 +8,7 @@ export default function UserList() {
     const [userList, setUserList] = useState([])
     useEffect(() => {
         getUserList().then((data) => {
-            console.log(typeof data)
+
             setUserList(data)
          })
         return () => {

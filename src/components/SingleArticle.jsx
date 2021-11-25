@@ -23,7 +23,7 @@ export default function SingleArticle() {
 				setSingleArticle(article);
 			})
 			.catch(err => {
-				console.log(`this is the  ${err}`)
+			
 				setError({ status: 404, msg: 'Oh no did you take a wrong turn' });
 			});
 		return;

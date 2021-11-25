@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/users.css';
 export default function UserCard({ user }) {
 	const { name, username, avatar_url } = user;
-	console.log(name, username, avatar_url);
+
 	const altStr = `avatar image for ${username}`;
 	return (
 		<div className='UserProfile'>

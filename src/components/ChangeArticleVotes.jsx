@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { upVoteArticle } from '../utils/ApiCalls';
 
 export default function ChangeArticleVotes({ article_id, votes }) {
-	console.log(article_id,votes);
+	
 
 	const [voteModifier, setVoteModifier] = useState(0);
-	const [rerender, setRerender] = useState();
-	const upVote = article_id => {
+	
+    const upVote = article_id => {
+       
 		setVoteModifier(votesModifier => {
 			return votesModifier ;
 		});

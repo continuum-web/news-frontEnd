@@ -25,7 +25,7 @@ export default function ArticleList() {
 
 	
 	return (
-		<div className='container'>
+		<div >
 			<div className='ArticleSort'>
 				<p>sort by:..</p>
 				<br />

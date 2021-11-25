@@ -35,7 +35,7 @@ export const getArticlesByTopic = topic => {
 
 export const getArticleComments = id => {
 	return newsAPI.get(`/articles/${id}/comments`).then(res => {
-		// console.log(res.data.comments)
+		
 		return res.data.comments
 	});
 };
@@ -59,7 +59,7 @@ export const addComment = (id, commentObj) => {
 
 export const getUserList = () => {
 	return newsAPI.get('/users').then((res) => {
-		console.log(res.data.users)
+
 		return res.data.users
 	 })
 }

@@ -9,7 +9,7 @@ export default function Comments({ id }) {
 		getArticleComments(id).then(comments => {
 			setArticleComments(comments);
 		}).catch((err) => {
-			console.log(err)
+			
 		});
 		return;
 	});

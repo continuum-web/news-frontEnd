@@ -7,7 +7,7 @@ import { userContext } from '../Contexts/UserContext';
 export default function AddComment(id) {
     const [newComment, setNewComment] = useState('');
     const { user } = useContext(userContext);
- console.log(id.id)
+ 
 		const handleSubmit = event => {
             event.preventDefault();
             const commentBody = event.target[0].value

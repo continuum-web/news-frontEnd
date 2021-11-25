@@ -13,6 +13,11 @@ export default function Menu({ topics, setShowMenu }) {
 						Home
 					</Link>
 				</li>
+				<li>
+					<Link className='navLink' to='/users'>
+						Users
+					</Link>
+				</li>
 				{topics.map(({ slug }) => {
 					return (
 						<li key={slug} className='navLi'>
