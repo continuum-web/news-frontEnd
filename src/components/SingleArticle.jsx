@@ -7,24 +7,17 @@ import Comments from './Comments';
 import { upVoteArticle } from '../utils/ApiCalls';
 import PageNotFound from '../components/PageNotFound'
 import AddComment from './AddComment'
+import ChangeArticleVotes from './ChangeArticleVotes';
 
 export default function SingleArticle() {
 	const [singleArticle, setSingleArticle] = useState({});
 	const { title, body, votes, author, article_id } = singleArticle;
 	const [error, setError] = useState(null);
-	const [votesState, setVotesState] = useState();
+	
 
 	const { id } = useParams();
 
-	const upVote = article_id => {
-		setVotesState(prevVoteState => {
-			return prevVoteState + 1;
-		});
-		upVoteArticle(article_id);
-	};
-
 	useEffect(() => {
-		setVotesState(votes);
 		getSingleArticle(id)
 			.then(article => {
 				setSingleArticle(article);
@@ -34,7 +27,7 @@ export default function SingleArticle() {
 				setError({ status: 404, msg: 'Oh no did you take a wrong turn' });
 			});
 		return;
-	}, [votes, id]);
+	}, [id]);
 
 
 	if (error !== null) {
@@ -47,14 +40,7 @@ export default function SingleArticle() {
 					<p className='singlearticleAuthor'>{author}</p>
 					<p className='singlearticleBody'>{body}</p>
 					<div className='sAVotesContainerer'>
-						<span className='singlearticleVotes'>Votes: {votesState}</span>
-						<button
-							className='singlearticleButton'
-							onClick={() => {
-								upVote(article_id);
-							}}>
-							Add Vote
-						</button>
+						<ChangeArticleVotes votes={votes} article_id={article_id} />
 					</div>
 					<AddComment id={id}/>
 				</div>
