@@ -6,8 +6,8 @@ export default function ChangeCommentVotes({ comment_id, votes }) {
 	const [voted, setVoted] = useState(false);
 	const [buttonText, setButtonText] = useState('Vote');
 	const upVote = comment_id => {
-		setVoteModifier(votesModifier => {
-			return votesModifier;
+		setVoteModifier(prevVoteMod => {
+			return voteModifier + 1;
 		});
 		upVoteComment(comment_id);
 	};
@@ -19,10 +19,7 @@ export default function ChangeCommentVotes({ comment_id, votes }) {
 				className='singlearticleButton'
 				onClick={() => {
 					if (!voted) {
-						setVoteModifier(voteModifier => {
-							return voteModifier + 1;
-						});
-						console.log(comment_id)
+						
 						upVote(comment_id);
 						setVoted(true);
 						setButtonText('Voted');

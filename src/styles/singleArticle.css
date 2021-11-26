@@ -77,6 +77,8 @@
 #commentInput {
 	margin: 0 1rem;
 }
-
+.mr1{
+	margin-right: 1rem;
+}
 @media only screen and (min-width: 1120px) {
 }

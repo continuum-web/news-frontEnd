@@ -7,13 +7,20 @@ import PageNotFound from './PageNotFound';
 
 export default function TopicList() {
 	const { topic } = useParams();
-	const sortby = 'created_at';
-
+	const [sortBy, setSortBy] = useState('created_at');
 	const [articles, setArticles] = useState([]);
 	const [error, setError] = useState(null);
-
+	const sorters = [
+		'created_at',
+		'votes',
+		'title',
+		'article_id',
+		'topic',
+		'author',
+		'comment_count',
+	];
 	useEffect(() => {
-		getArticles(sortby, topic)
+		getArticles(sortBy, topic)
 			.then(({ articles }) => {
 				setArticles(articles);
 			})
@@ -25,17 +32,36 @@ export default function TopicList() {
 			});
 
 		return;
-	}, [topic]);
+	}, [topic, sortBy]);
 
 	if (error !== null) {
 		return <PageNotFound error={error} />;
 	} else {
 		return (
-			<main id='TopicList' className='container'>
+			<main>
+				<div className='ArticleSort'>
+					<p>sort by:..</p>
+					<br />
+					{sorters.map(sorter => {
+						return (
+							<button
+								key={sorter}
+								onClick={() => {
+									setSortBy(sorter);
+								}}>
+								{sorter}
+							</button>
+						);
+					})}
+				</div>
+			<section id='TopicList' className='container'>
+				
 				{articles.map(article => {
 					return <ArticleCard key={article.article_id} article={article} />;
 				})}
+				</section>
 			</main>
+				
 		);
 	}
 }

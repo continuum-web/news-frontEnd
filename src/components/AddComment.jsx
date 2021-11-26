@@ -14,7 +14,7 @@ export default function AddComment(id) {
 			username: user,
 			body: commentBody,
 		};
-		addComment(id.id, commentObj);
+		addComment(id.id, commentObj).then((event.target[0].value = ''));
 	};
 
 	return (

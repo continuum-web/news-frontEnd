@@ -6,22 +6,19 @@ export default function ChangeArticleVotes({ article_id, votes }) {
 	const [voted, setVoted] = useState(false);
 	const [buttonText, setButtonText] = useState('Vote');
 	const upVote = article_id => {
-		setVoteModifier(votesModifier => {
-			return votesModifier;
+		setVoteModifier(voteModifier => {
+			return voteModifier + 1;
 		});
 		upVoteArticle(article_id);
 	};
 
 	return (
-		<div>
-			<span className='singlearticleVotes'>Votes: {votes + voteModifier}</span>
+		<div >
+			<span className='singlearticleVotes mr1'>Votes: {votes + voteModifier}</span>
 			<button
 				className='singlearticleButton'
 				onClick={() => {
 					if (!voted) {
-						setVoteModifier(voteModifier => {
-							return voteModifier + 1;
-						});
 						upVote(article_id);
 						setVoted(true);
 						setButtonText('Voted');
