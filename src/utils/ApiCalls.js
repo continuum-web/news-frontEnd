@@ -44,6 +44,15 @@ export const upVoteArticle = id => {
 			return res;
 		});
 };
+export const upVoteComment = id => {
+	return newsAPI
+		.patch(`/comments/${id}`, {
+			inc_votes: 1,
+		})
+		.then(res => {
+			return res;
+		});
+};
 
 export const addComment = (id, commentObj) => {
 	return newsAPI.post(`/articles/${id}/comments`, commentObj);
