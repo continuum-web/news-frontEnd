@@ -6,19 +6,23 @@ import CommentCard from './CommentCard';
 export default function Comments({ id }) {
 	//console.log(author)
 	const [articleComments, setArticleComments] = useState([]);
+
 	useEffect(() => {
+		let mounted = true;
 		getArticleComments(id).then(comments => {
-			setArticleComments(comments);
-		}).catch((err) => {
-			
+			if (mounted) {
+				setArticleComments(comments);
+			}
 		});
-		return;
+		return function cleanup() {
+			mounted = false;
+		};
 	});
 
 	return (
 		<div className='CommentsContainer'>
 			{articleComments.map(comment => {
-				return <CommentCard key={comment.comment_id} comment={comment}  />;
+				return <CommentCard key={comment.comment_id} comment={comment} />;
 			})}
 		</div>
 	);
