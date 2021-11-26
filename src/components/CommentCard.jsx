@@ -18,11 +18,16 @@ export default function CommentCard({ comment }) {
 			<p className='commentAuthor'>{comment.author}</p>
 			<div className='commentsVoteSection'>
 				<p className='commentVotes'>Votes: {comment.votes}</p>
-				<ChangeCommentVotes votes={comment.votes} comment_id={comment.comment_id} />
+				<ChangeCommentVotes
+					votes={comment.votes}
+					comment_id={comment.comment_id}
+				/>
 			</div>
 			<button
 				className={
-					user === comment.author ? 'commentButton' : 'disabled commentButton'
+					user === comment.author
+						? 'commentDelete commentButton '
+						: ' commentDelete disabled commentButton'
 				}
 				onClick={() => {
 					removeComment(comment_id);
