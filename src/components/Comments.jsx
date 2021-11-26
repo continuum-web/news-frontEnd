@@ -4,7 +4,6 @@ import { getArticleComments } from '../utils/ApiCalls';
 import CommentCard from './CommentCard';
 
 export default function Comments({ id }) {
-	//console.log(author)
 	const [articleComments, setArticleComments] = useState([]);
 
 	useEffect(() => {

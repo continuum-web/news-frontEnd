@@ -10,12 +10,14 @@ export const getTopics = () => {
 	});
 };
 
-export const getArticles = sortBy => {
+export const getArticles = (sortBy, topic) => {
 	return newsAPI
-		.get('/articles',{params: {
+		.get('/articles', {
+			params: {
 			sort_by: sortBy,
-			
-		}})
+			topic: topic,
+		},
+		})
 		.then(res => {
 			return res.data;
 		});
@@ -26,41 +28,33 @@ export const getSingleArticle = id => {
 		return articles[0];
 	});
 };
-export const getArticlesByTopic = topic => {
-	return newsAPI.get(`/articles?topic=${topic}`).then(res => {
-		
-		return res.data;
-	});
-};
 
 export const getArticleComments = id => {
 	return newsAPI.get(`/articles/${id}/comments`).then(res => {
-		
-		return res.data.comments
+		return res.data.comments;
 	});
 };
 
-
-export const upVoteArticle = (id) => {
-	return newsAPI.patch(`/articles/${id}`, {
-		inc_votes: 1,
-	}).then((res) => {
-		return res
-	});
-}
+export const upVoteArticle = id => {
+	return newsAPI
+		.patch(`/articles/${id}`, {
+			inc_votes: 1,
+		})
+		.then(res => {
+			return res;
+		});
+};
 
 export const addComment = (id, commentObj) => {
-	return newsAPI.post(`/articles/${id}/comments`, commentObj)
-	
-}
+	return newsAPI.post(`/articles/${id}/comments`, commentObj);
+};
 
 export const getUserList = () => {
-	return newsAPI.get('/users').then((res) => {
-
-		return res.data.users
-	 })
-}
+	return newsAPI.get('/users').then(res => {
+		return res.data.users;
+	});
+};
 
 export const deleteComment = id => {
-	return newsAPI.delete(`/comments/${id}`)
-}
+	return newsAPI.delete(`/comments/${id}`);
+};
