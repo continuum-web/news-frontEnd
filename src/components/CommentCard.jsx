@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/comments.css';
 import { deleteComment } from '../utils/ApiCalls';
 import { useContext } from 'react';

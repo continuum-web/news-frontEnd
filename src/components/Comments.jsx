@@ -5,8 +5,6 @@ import CommentCard from './CommentCard';
 
 export default function Comments({ id }) {
 	const [articleComments, setArticleComments] = useState([]);
-	const [sortBy, setSortBy] = useState('created_at');
-	const sorters = ['created_at', 'votes'];
 
 	useEffect(() => {
 		let mounted = true;
