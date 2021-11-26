@@ -1,6 +1,5 @@
 {
 	"name": "nc-news-frontend",
-	"homepage": "https://continuum-web.github.io/news-frontEnd/",
 	"version": "1.0",
 	"private": true,
 	"dependencies": {
