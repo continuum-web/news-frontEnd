@@ -5,6 +5,8 @@ import CommentCard from './CommentCard';
 
 export default function Comments({ id }) {
 	const [articleComments, setArticleComments] = useState([]);
+	const [sortBy, setSortBy] = useState('created_at');
+	const sorters = ['created_at', 'votes'];
 
 	useEffect(() => {
 		let mounted = true;
@@ -19,10 +21,12 @@ export default function Comments({ id }) {
 	});
 
 	return (
-		<div className='CommentsContainer'>
-			{articleComments.map(comment => {
-				return <CommentCard key={comment.comment_id} comment={comment} />;
-			})}
-		</div>
+		<section>
+			<div className='CommentsContainer'>
+				{articleComments.map(comment => {
+					return <CommentCard key={comment.comment_id} comment={comment} />;
+				})}
+			</div>
+		</section>
 	);
 }
