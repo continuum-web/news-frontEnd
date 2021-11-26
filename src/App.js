@@ -21,7 +21,7 @@ function App() {
 					<Route exact path='/' element={<ArticleList />} />
 					<Route exact path='/articles' element={<ArticleList />} />
 					<Route path='/articles/:id' element={<SingleArticle />} />
-					<Route path='/topic/:topic' element={<TopicList />} /> 
+					<Route path='/topic/:topic' element={<TopicList />} />
 					<Route path='/users' element={<UserList />} />
 				</Routes>
 				<Footer />

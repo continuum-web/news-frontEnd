@@ -15,7 +15,7 @@ export default function ArticleList() {
 		'author',
 		'comment_count',
 	];
-	
+
 	useEffect(() => {
 		getArticles(sortBy).then(({ articles }) => {
 			setArticles(articles);
@@ -23,9 +23,8 @@ export default function ArticleList() {
 		return;
 	}, [sortBy]);
 
-	
 	return (
-		<div >
+		<div>
 			<div className='ArticleSort'>
 				<p>sort by:..</p>
 				<br />

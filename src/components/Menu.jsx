@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Menu({ topics, setShowMenu }) {
 	return (
 		<div className='Menu'>
-			<span id='closeMenu' onClick={() => {setShowMenu(false)}}>
+			<span
+				id='closeMenu'
+				onClick={() => {
+					setShowMenu(false);
+				}}>
 				X
 			</span>
 			<ul id='menuList'>

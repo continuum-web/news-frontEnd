@@ -10,8 +10,7 @@ import { userContext } from '../Contexts/UserContext';
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false);
 	const [topicList, setTopicsList] = useState([]);
-	const { user} = useContext(userContext);
-	
+	const { user } = useContext(userContext);
 
 	useEffect(() => {
 		getTopics().then(({ topics }) => {
@@ -27,7 +26,7 @@ export default function Header() {
 		return (
 			<header id='Header'>
 				<h1 id='HeaderH1'>Northcoders News</h1>
-				<p className="welcomeUser">Welcome : { user}</p>
+				<p className='welcomeUser'>Welcome : {user}</p>
 				<Menu topics={topicList} setShowMenu={setShowMenu} />
 			</header>
 		);
@@ -35,7 +34,7 @@ export default function Header() {
 		return (
 			<header id='Header'>
 				<h1 id='HeaderH1'>Northcoders News</h1>
-				<p className="welcomeUser">Welcome : {user}</p>
+				<p className='welcomeUser'>Welcome : {user}</p>
 				<span
 					onClick={() => {
 						setShowMenu(true);

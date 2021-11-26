@@ -5,9 +5,11 @@ export default function Nav({ topics }) {
 	return (
 		<nav id='Nav'>
 			<ul id='navList'>
-				<Link to='/' className='navLink'>
-					Home
-				</Link>
+				<li>
+					<Link to='/' className='navLink'>
+						Home
+					</Link>
+				</li>
 				<li>
 					<Link className='navLink' to='/users'>
 						Users

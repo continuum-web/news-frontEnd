@@ -14,9 +14,9 @@ export const getArticles = (sortBy, topic) => {
 	return newsAPI
 		.get('/articles', {
 			params: {
-			sort_by: sortBy,
-			topic: topic,
-		},
+				sort_by: sortBy,
+				topic: topic,
+			},
 		})
 		.then(res => {
 			return res.data;

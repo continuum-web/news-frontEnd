@@ -3,8 +3,8 @@ import { upVoteArticle } from '../utils/ApiCalls';
 
 export default function ChangeArticleVotes({ article_id, votes }) {
 	const [voteModifier, setVoteModifier] = useState(0);
-	const [voted, setVoted] = useState(false)
-	const [buttonText, setButtonText] = useState("Vote")
+	const [voted, setVoted] = useState(false);
+	const [buttonText, setButtonText] = useState('Vote');
 	const upVote = article_id => {
 		setVoteModifier(votesModifier => {
 			return votesModifier;
@@ -23,11 +23,11 @@ export default function ChangeArticleVotes({ article_id, votes }) {
 							return voteModifier + 1;
 						});
 						upVote(article_id);
-						setVoted(true)
-						setButtonText('voted')
-					} 					
+						setVoted(true);
+						setButtonText('voted');
+					}
 				}}>
-				{ buttonText}
+				{buttonText}
 			</button>
 		</div>
 	);
