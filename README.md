@@ -1,7 +1,7 @@
 # News Front End
 
 A front-end React application to compliment my back-end news API. The react app
-can be found hosted [on GitHub Pages](https://continuum-web.github.io/) The
+can be found hosted [on netlify](https://continuum-news.netlify.app/) The
 project uses React to display articles fetched from the API using AXIOS, it then
 renders the data in user friendly components.
 
